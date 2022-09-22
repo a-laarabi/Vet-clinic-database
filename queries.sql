@@ -93,3 +93,45 @@ UPDATE animals
   WHERE weight_kg < 0;
 
 COMMIT;
+
+-- How many animals are there?
+
+SELECT COUNT(name) FROM animals;
+
+-- How many animals have never tried to escape?
+
+SELECT COUNT(name) FROM animals
+  WHERE escape_attempts = 0;
+
+-- What is the average weight of animals?
+
+SELECT AVG(weight_kg) FROM animals;
+
+-- Who escapes the most, neutered or not neutered animals?
+
+SELECT neutered, SUM(escape_attempts)
+  FROM animals
+  GROUP BY neutered;
+
+
+SELECT neutered, MAX(sum)  FROM (
+  SELECT neutered, SUM(escape_attempts)
+  FROM animals
+  GROUP BY neutered
+  ) As Max_escape;
+
+
+
+
+
+-- What is the minimum and maximum weight of each type of animal?
+
+SELECT species, MAX(weight_kg), MIN(weight_kg) 
+  FROM animals
+  GROUP BY species;
+
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+
+SELECT AVG(escape_attempts), species FROM animals
+WHERE date_of_birth BETWEEN '1990-12-31' AND '2000-12-31'
+GROUP BY species;
