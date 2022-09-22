@@ -94,6 +94,8 @@ UPDATE animals
 
 COMMIT;
 
+-- Write queries to answer the following questions:
+
 -- How many animals are there?
 
 SELECT COUNT(name) FROM animals;
@@ -112,17 +114,6 @@ SELECT AVG(weight_kg) FROM animals;
 SELECT neutered, SUM(escape_attempts)
   FROM animals
   GROUP BY neutered;
-
-
-SELECT neutered, MAX(sum)  FROM (
-  SELECT neutered, SUM(escape_attempts)
-  FROM animals
-  GROUP BY neutered
-  ) As Max_escape;
-
-
-
-
 
 -- What is the minimum and maximum weight of each type of animal?
 
