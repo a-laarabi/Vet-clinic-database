@@ -213,12 +213,12 @@ SELECT COUNT(*) FROM (
 
 -- List all vets and their specialties, including vets with no specialties.
 
--- NOT SOLVED YET
-SELECT * FROM specializations
-LEFT JOIN vets
+SELECT vets.name, species.name FROM vets
+LEFT JOIN specializations
 ON specializations.id_vets = vets.id
-JOIN species
-ON specializations.id_species = species.id;
+LEFT JOIN species
+ON species.id = specializations.id_species
+ORDER BY vets.id;
 
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
 
@@ -264,7 +264,10 @@ LIMIT 1;
 
 -- How many visits were with a vet that did not specialize in that animal's species?
 
-
+SELECT * FROM vets
+LEFT JOIN specializations
+ON specializations.id_vets = vets.id
+ORDER BY vets.id;
 
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 
