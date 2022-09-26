@@ -284,3 +284,20 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
+
+SELECT COUNT(*) FROM visits where id_animals = 4;
+SELECT * FROM visits where id_vets = 2;
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where id_animals = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where id_vets = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+
+
+
+-- Find a way to decrease the execution time of the first query. Look for hints in the previous lessons.
+
+-- Find a way to improve execution time of the other two queries.
