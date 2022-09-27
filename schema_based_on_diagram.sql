@@ -41,3 +41,23 @@ CREATE TABLE invoice_items (
   FOREIGN KEY (invoice_id) REFERENCES invoices(id),
   FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
+
+CREATE TABLE treatment_histories (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  medical_histories_id INT,
+  treatment_id INT,
+  FOREIGN KEY (medical_histories_id) REFERENCES medical_histories(id),
+  FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
+
+CREATE INDEX patinet_id_index ON medical_histories(patinet_id);
+
+CREATE INDEX medical_history_id_index ON invoices(medical_history_id);
+
+CREATE INDEX invoice_id_index ON invoice_items(invoice_id);
+
+CREATE INDEX treatment_id_index ON invoice_items(treatment_id);
+
+CREATE INDEX medical_histories_id_index ON treatment_histories(medical_histories_id);
+
+CREATE INDEX treatment_id_index ON treatment_histories(treatment_id);
