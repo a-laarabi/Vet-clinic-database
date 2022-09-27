@@ -6,7 +6,7 @@
 
 ## Database schema [diagram](https://dbdiagram.io/d/63326a1a7b3d2034ffc2071a)
 
-
+![Vet Clinic](https://user-images.githubusercontent.com/61356975/192424472-050f8050-d5db-48da-b6c9-2e472479ff1e.png)
 
 ## Getting Started
 
