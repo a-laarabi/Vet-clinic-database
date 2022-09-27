@@ -4,6 +4,8 @@
 > This is a database related projects at Microverse.
 > This repository includes files with plain SQL that can be used to recreate This database.
 
+## Database schema [diagram](https://dbdiagram.io/d/63326a1a7b3d2034ffc2071a)
+
 
 
 ## Getting Started
